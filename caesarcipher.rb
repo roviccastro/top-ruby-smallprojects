@@ -13,15 +13,15 @@ def encode(str = gets.chomp, shifter = gets.chomp.to_i.abs)
   shifted_arr = str_arr.map do |word|
      word.split("").map do |character|
 
-      if !(character.ord.between?(65, 90) || character.ord.between?(97, 122))
+      if character =~ /[\W]/
          character
-      elsif character == character.upcase
+      elsif character =~ /[A-Z]/
         if ((character.ord + shifter) > 90)
           (((((character.ord - 65).abs) - 25) + shifter) + 64).chr
         else
           (character.ord + shifter).chr
         end
-      elsif character == character.downcase
+      elsif character =~ /[a-z]/
         if ((character.ord + shifter) > 122)
           (((((character.ord - 97).abs) - 25) + shifter) + 96).chr
         else
@@ -29,19 +29,6 @@ def encode(str = gets.chomp, shifter = gets.chomp.to_i.abs)
         end        
       end
 
-      # if character == character.upcase
-      #   if ((character.ord + shifter) > 90)
-      #     (((((character.ord - 65).abs) - 25) + shifter) + 64).chr
-      #   else
-      #     (character.ord + shifter).chr
-      #   end
-      # elsif character == character.downcase
-      #   if ((character.ord + shifter) > 122)
-      #     (((((character.ord - 97).abs) - 25) + shifter) + 96).chr
-      #   else
-      #     (character.ord + shifter).chr
-      #   end
-      # end
     end
   end
 
