@@ -12,7 +12,7 @@ def pick_best_day(prices)
     if !(remaining_days).empty?
       sell_day = prices.index(remaining_days.sort.last)
 
-      p "Buy (#{prices[buy_day]}) at day #{buy_day} and Sell (#{prices[sell_day]}) at day #{sell_day}for a profit of #{prices[sell_day] - prices[buy_day]}"
+      p "Buy (#{prices[buy_day]}) at day #{buy_day} and Sell (#{prices[sell_day]}) at day #{sell_day} for a profit of #{prices[sell_day] - prices[buy_day]}"
     else
       p "Buy and Sell (#{prices[buy_day]}) at day #{buy_day} to not lose profit"
     end
