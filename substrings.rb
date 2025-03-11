@@ -1,8 +1,8 @@
 p "Substrings Project"
 p "Enter Phrase to find in dictionary:"
 
-dictionary = %w(Hello hi hey beautiful gorgeous majestic pretty wonderful is are you me i am im lol lmao rofl skibidy sigma toilet rizz odin project sit stand up down right left top bottom side step jump)
-phrase = gets.chomp
+dictionary = %w(hello hi hey wassup wsp girl boy man woman gyatt rizz rizzler ohio skibidi sigma gronk john pork lol lmao rofl ily i am im love you u right left top down bottom up)
+phrase = gets.chomp.downcase
 
 def get_substrings(phrase, reference)
   phrase_arr = phrase.downcase.split(" ")
