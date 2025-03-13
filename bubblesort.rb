@@ -9,7 +9,6 @@ def bubble_sort(numbers)
       bubbled_arr[i] = bubbled_arr[i]
     elsif numbers[i] > numbers[i + 1]
       x = numbers[i]
-
       bubbled_arr[i] = bubbled_arr[i + 1]
       bubbled_arr[i + 1] = x
     elsif numbers[i] < numbers[i + 1]
@@ -17,8 +16,7 @@ def bubble_sort(numbers)
     end
   end
 
-  bubble_sort(bubbled_arr) unless numbers == numbers.sort
-  return bubbled_arr if bubbled_arr == numbers.sort
+  (bubbled_arr == numbers.sort) ? bubbled_arr : bubble_sort(bubbled_arr)
 end
 
 p "Sorted: #{bubble_sort(number_arr)}"
